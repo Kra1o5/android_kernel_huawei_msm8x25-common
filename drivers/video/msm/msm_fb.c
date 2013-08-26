@@ -1534,9 +1534,7 @@ static int msm_fb_register(struct msm_fb_data_type *mfd)
 			var->reserved[3] = panel_info->lcd.refx100 / (100 * 2);
 		else
 			var->reserved[3] = panel_info->lcd.refx100 / 100;
-#else
-			var->reserved[3] = panel_info->mipi.frame_rate;
-#endif
+
 	} else {
 		if (panel_info->type == MIPI_VIDEO_PANEL) {
 			var->reserved[3] = panel_info->mipi.frame_rate;
