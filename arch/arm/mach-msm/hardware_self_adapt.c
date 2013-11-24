@@ -199,7 +199,8 @@ hw_bt_device_model get_hw_bt_device_model(void)
       || machine_is_msm8x25_U8833D()
       || machine_is_msm8x25_U8833()
       || machine_is_msm8x25_C8813()
-      || machine_is_msm8x25_C8812P())
+      || machine_is_msm8x25_C8812P()
+      || machine_is_msm8x25_Y300_J1())
     {
         return BT_WCN2243;
     }
@@ -449,7 +450,8 @@ lcd_type get_hw_lcd_resolution_type(void)
         || machine_is_msm8x25_U8833()        
         || machine_is_msm8x25_H881C()
         || machine_is_msm8x25_C8812P()
-        || machine_is_msm8x25_Y301_A1())
+        || machine_is_msm8x25_Y301_A1()
+        || machine_is_msm8x25_Y300_J1())
 	{
 		lcd_resolution = LCD_IS_WVGA;
 	}
@@ -506,6 +508,7 @@ lcd_panel_type get_lcd_panel_type(void)
 	if ( machine_is_msm8x25_C8833D() 
 		|| machine_is_msm8x25_U8833D()	
 		|| machine_is_msm8x25_U8833()
+		|| machine_is_msm8x25_Y300_J1()
 	)
 	{
 		switch (lcd_id)
@@ -818,11 +821,16 @@ uint get_vibrator_voltage(void)
     {
         return 3000;
     }
+    else if(machine_is_msm8x25_Y300_J1())
+    {
+        return 3000;
+    }
     else
     {
         return 2700;
     }
 }
+
 /*===========================================================================
 
 
@@ -887,7 +895,8 @@ compass_gs_position_type  get_compass_gs_position(void)
 	{
 		compass_gs_position=COMPASS_BOTTOM_GS_BOTTOM;
 	}
-	else if (machine_is_msm7x27a_U8185())	
+	else if (machine_is_msm7x27a_U8185()
+	     || machine_is_msm8x25_Y300_J1())	
 	{
 		compass_gs_position=COMPASS_NONE_GS_TOP;
 	}
@@ -1204,7 +1213,8 @@ bool board_support_flash(void)
 	 /*product list that have flash*/
     if( machine_is_msm8x25_U8825()
         || machine_is_msm8x25_U8825D()
-        || machine_is_msm8x25_U8833()        
+        || machine_is_msm8x25_U8833()
+        || machine_is_msm8x25_Y300_J1()
         || machine_is_msm8x25_C8825D()
         || machine_is_msm8x25_C8950D()
         || machine_is_msm8x25_U8950D()
@@ -1366,7 +1376,8 @@ hw_wifi_device_type get_hw_wifi_device_type(void)
     || machine_is_msm8x25_U8833D()
     || machine_is_msm8x25_U8833()    
     || machine_is_msm8x25_C8813()
-    || machine_is_msm8x25_C8812P())
+    || machine_is_msm8x25_C8812P()
+    || machine_is_msm8x25_Y300_J1())
   {
       return WIFI_QUALCOMM;
   }
@@ -1389,7 +1400,8 @@ tp_type get_touch_type(void)
 	    || machine_is_msm8x25_U8951D()
         || machine_is_msm8x25_U8951()
         || machine_is_msm8x25_U8833D()
-        || machine_is_msm8x25_U8833()        
+        || machine_is_msm8x25_U8833()
+        || machine_is_msm8x25_Y300_J1()
         || machine_is_msm8x25_C8813()
         || machine_is_msm8x25_H881C()		
         || machine_is_msm8x25_Y301_A1())
@@ -1426,6 +1438,7 @@ hw_wifi_device_model get_hw_wifi_device_model(void)
         || machine_is_msm8x25_U8951D()
         || machine_is_msm8x25_U8951()
         || machine_is_msm8x25_U8833D()
+        || machine_is_msm8x25_Y300_J1()
         || machine_is_msm8x25_U8833()        
         || machine_is_msm8x25_C8813()
         || machine_is_msm8x25_C8812P())
@@ -1464,6 +1477,7 @@ hw_ds_type get_hw_ds_type(void)
       || machine_is_msm7x27a_H867G()
       || machine_is_msm8x25_H881C()
       || machine_is_msm7x27a_H868C()
+      || machine_is_msm8x25_Y300_J1()
       || (machine_is_msm8x25_U8950() && (HW_VER_SUB_VA == get_hw_sub_board_id())) 
       || machine_is_msm8x25_Y301_A1() )
     {
@@ -1743,6 +1757,7 @@ audio_property_type get_audio_fir_enabled(void)
        || machine_is_msm7x27a_H868C()
        || machine_is_msm8x25_C8833D()
        || machine_is_msm8x25_U8833D()
+       || machine_is_msm8x25_Y300_J1()
        || machine_is_msm8x25_U8833()
        || machine_is_msm8x25_Y301_A1()
        )
@@ -1766,6 +1781,7 @@ audio_property_type get_audio_fm_type(void)
       || machine_is_msm7x27a_C8668D()
       || machine_is_msm8x25_C8833D()
       || machine_is_msm8x25_U8833D()
+      || machine_is_msm8x25_Y300_J1()
       || machine_is_msm8x25_U8833()      
       || machine_is_msm8x25_C8813()
       || machine_is_msm8x25_C8812P())
